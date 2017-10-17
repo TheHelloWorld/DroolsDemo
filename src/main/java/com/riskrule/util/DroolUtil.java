@@ -17,9 +17,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class DroolUtil {
+
 	private static final Logger logger = LoggerFactory.getLogger(DroolUtil.class);
+
 	/**
 	 * 初始化加载drl文件,并返回运行类 RuleBase
+	 *
 	 * @param
 	 * @return
 	 */
@@ -36,17 +39,17 @@ public class DroolUtil {
 	}
 
 
-	public static KnowledgeBuilder getKnowledgeBuilder(List<String> list){
+	public static KnowledgeBuilder getKnowledgeBuilder(List<String> list) {
 		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-		for(String path : list){
-			File file= new File(path);
+		for (String path : list) {
+			File file = new File(path);
 			Resource resource = ResourceFactory.newFileResource(file);
 			kbuilder.add(resource, ResourceType.DRL);
 		}
 		KnowledgeBuilderErrors errors = kbuilder.getErrors();
 		if (errors.size() > 0) {
-			for (KnowledgeBuilderError error: errors) {
-				System.err.println(error);
+			for (KnowledgeBuilderError error : errors) {
+				logger.error("err{}",error);
 			}
 			throw new IllegalArgumentException("Could not parse knowledge.");
 		}
@@ -62,9 +65,9 @@ public class DroolUtil {
 		if (null == drlFilePath || 0 == drlFilePath.size()) {
 			return null;
 		}
-		List<Reader> readers = new ArrayList<Reader>();
+		List<Reader> readers = new ArrayList<>();
 		for (String ruleFilePath : drlFilePath) {
-			System.out.println(ruleFilePath);
+			logger.info(ruleFilePath);
 			readers.add(new FileReader(new File(ruleFilePath)));
 		}
 		return readers;
@@ -72,12 +75,13 @@ public class DroolUtil {
 
 	/**
 	 * 执行规则文件
+	 *
 	 * @param ruleBase
 	 * @param obj
 	 */
 	public static void executeRuleEngine(KnowledgeBase ruleBase, Object obj) {
-		if(null == ruleBase.getKnowledgePackages() || 0 == ruleBase.getKnowledgePackages().size()) {
-			System.out.println("规则文件为空");
+		if (null == ruleBase.getKnowledgePackages() || 0 == ruleBase.getKnowledgePackages().size()) {
+			logger.info("规则文件为空");
 			return;
 		}
 		StatefulKnowledgeSession statefulSession = ruleBase.newStatefulKnowledgeSession();

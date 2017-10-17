@@ -3,11 +3,16 @@ package com.riskrule.domain;
 import org.drools.KnowledgeBase;
 
 public class RunRuleBean {
-    /** 版本号 **/
+
+	/**
+	 * 版本号
+	 **/
 	private Integer version;
 
-    /** 规则引擎 **/
-    private KnowledgeBase kBase;
+	/**
+	 * 规则引擎
+	 **/
+	private KnowledgeBase kBase;
 
 	public Integer getVersion() {
 		return version;
@@ -17,13 +22,13 @@ public class RunRuleBean {
 		this.version = version;
 	}
 
-    public KnowledgeBase getkBase() {
-        return kBase;
-    }
+	public KnowledgeBase getkBase() {
+		return kBase;
+	}
 
-    public void setkBase(KnowledgeBase kBase) {
-        this.kBase = kBase;
-    }
+	public void setkBase(KnowledgeBase kBase) {
+		this.kBase = kBase;
+	}
 
 
 	@Override
@@ -31,7 +36,7 @@ public class RunRuleBean {
 		StringBuffer sb = new StringBuffer();
 		sb.append("version : " + this.version);
 		sb.append("__");
-        sb.append("kBase" + this.getkBase());
+		sb.append("kBase" + this.getkBase());
 		return sb.toString();
 	}
 

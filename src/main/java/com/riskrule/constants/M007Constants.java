@@ -4,12 +4,13 @@
 package com.riskrule.constants;
 
 /**
+ * @author xiaohui.wei
+ * @version 2015年11月23日 上午9:27:13
  * @Description: 这里用一句话描述这个类的作用
  * @see: M007Constants 此处填写需要参考的类
- * @version 2015年11月23日 上午9:27:13
- * @author xiaohui.wei
  */
 public class M007Constants {
+
 	/* 商户发起的特殊风险应答码笔数  */
 	public static final String hlRcodeCount = "hlRcodeCount";
 	/* 商户发起的特殊风险应答码涉及卡张数  */

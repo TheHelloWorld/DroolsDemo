@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class RiskObj {
 
-	private Map<String,Object> map;
+	private Map<String, Object> map;
 
 	private List<String> list;
 
@@ -56,12 +56,11 @@ public class RiskObj {
 	}
 
 	public void setRuleRecords(String rCode) {
-		if(this.list == null || this.list.size() == 0){
-			List<String> li = new ArrayList<String>();
+		if (this.list == null || this.list.isEmpty()) {
+			List<String> li = new ArrayList<>();
 			li.add(rCode);
 			this.list = li;
-		}
-		if(this.list != null && list.size() > 0){
+		} else {
 			this.list.add(rCode);
 		}
 	}

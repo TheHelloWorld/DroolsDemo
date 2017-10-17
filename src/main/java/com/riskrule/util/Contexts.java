@@ -10,49 +10,49 @@ package com.riskrule.util;
  */
 public class Contexts {
 
-    private Contexts() {
-        throw new RuntimeException("不能初始化这个类");
-    }
+	private Contexts() {
+		throw new RuntimeException("不能初始化这个类");
+	}
 
-    // Long
-    public static final String LONG = "Long";
+	// Long
+	public static final String LONG = "Long";
 
-    // List<Long>
-    public static final String LONG_LIST = "LongList";
+	// List<Long>
+	public static final String LONG_LIST = "LongList";
 
-    // Date
-    public static final String DATE = "Date";
+	// Date
+	public static final String DATE = "Date";
 
-    // List<Date>
-    public static final String DATE_LIST = "DateList";
+	// List<Date>
+	public static final String DATE_LIST = "DateList";
 
-    // String
-    public static final String STRING = "String";
+	// String
+	public static final String STRING = "String";
 
-    // List<String>
-    public static final String STRING_LIST = "StringList";
+	// List<String>
+	public static final String STRING_LIST = "StringList";
 
-    // Boolean
-    public static final String BOOLEAN = "Boolean";
+	// Boolean
+	public static final String BOOLEAN = "Boolean";
 
-    // List<Boolean>
-    public static final String BOOLEAN_LIST = "BooleanList";
+	// List<Boolean>
+	public static final String BOOLEAN_LIST = "BooleanList";
 
-    // Double
-    public static final String DOUBLE = "Double";
+	// Double
+	public static final String DOUBLE = "Double";
 
-    // List<Double>
-    public static final String DOUBLE_LIST = "DoubleList";
+	// List<Double>
+	public static final String DOUBLE_LIST = "DoubleList";
 
-    // Integer
-    public static final String INTEGER = "Integer";
+	// Integer
+	public static final String INTEGER = "Integer";
 
-    // List<Integer>
-    public static final String INTEGER_LIST = "IntegerList";
+	// List<Integer>
+	public static final String INTEGER_LIST = "IntegerList";
 
-    // Bigdecimal
-    public static final String BIGDECIMAL = "Bigdecimal";
+	// Bigdecimal
+	public static final String BIGDECIMAL = "Bigdecimal";
 
-    // List<Bigdecimal>
-    public static final String BIGDECIMAL_LIST = "BigdecimalList";
+	// List<Bigdecimal>
+	public static final String BIGDECIMAL_LIST = "BigdecimalList";
 }

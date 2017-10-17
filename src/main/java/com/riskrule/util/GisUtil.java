@@ -3,21 +3,18 @@ package com.riskrule.util;
 import java.util.Date;
 
 public class GisUtil {
+
 	/**
 	 * 计算地球上任意两点(经纬度)距离
 	 *
-	 * @param long1
-	 *            第一点经度
-	 * @param lat1
-	 *            第一点纬度
-	 * @param long2
-	 *            第二点经度
-	 * @param lat2
-	 *            第二点纬度
+	 * @param long1 第一点经度
+	 * @param lat1  第一点纬度
+	 * @param long2 第二点经度
+	 * @param lat2  第二点纬度
 	 * @return 返回距离 单位：米
 	 */
 	public static double distanceByMeter(double long1, double lat1, double long2,
-			double lat2) {
+	                                     double lat2) {
 		double a, b, R;
 		R = 6378137; // 地球半径
 		lat1 = lat1 * Math.PI / 180.0;
@@ -31,52 +28,42 @@ public class GisUtil {
 		d = 2
 				* R
 				* Math.asin(Math.sqrt(sa2 * sa2 + Math.cos(lat1)
-						* Math.cos(lat2) * sb2 * sb2));
+				* Math.cos(lat2) * sb2 * sb2));
 		return d;
 	}
 
 	/**
 	 * 计算地球上任意两点(经纬度)距离
 	 *
-	 * @param long1
-	 *            第一点经度
-	 * @param lat1
-	 *            第一点纬度
-	 * @param long2
-	 *            第二点经度
-	 * @param lat2
-	 *            第二点纬度
+	 * @param long1 第一点经度
+	 * @param lat1  第一点纬度
+	 * @param long2 第二点经度
+	 * @param lat2  第二点纬度
 	 * @return 返回距离 单位：千米
 	 */
 	public static double distanceByKiloMeter(double long1, double lat1, double long2,
-			double lat2) {
+	                                         double lat2) {
 		double d = distanceByMeter(long1, lat1, long2, lat2);
-		return d/1000;
+		return d / 1000;
 	}
 
 
 	/**
 	 * 获得时速
 	 *
-	 * @param long1
-	 *            第一点经度
-	 * @param lat1
-	 *            第一点纬度
-	 * @param long2
-	 *            第二点经度
-	 * @param lat2
-	 *            第二点纬度
-	 * @smdate 第一点时间
-	 *
-	 * bdate 第二点时间
-	 *
-	 *
+	 * @param long1 第一点经度
+	 * @param lat1  第一点纬度
+	 * @param long2 第二点经度
+	 * @param lat2  第二点纬度
 	 * @return 返回时速距离
+	 * @smdate 第一点时间
+	 * <p>
+	 * bdate 第二点时间
 	 */
 	public static double getMph(double long1, double lat1, double long2,
-			double lat2 , Date smdate , Date bdate ) {
+	                            double lat2, Date smdate, Date bdate) {
 		double kMeter = distanceByKiloMeter(long1, lat1, long2, lat2);
 		double hours = DateUtil.hoursBetween(smdate, bdate);
-		return kMeter/hours;
+		return kMeter / hours;
 	}
 }

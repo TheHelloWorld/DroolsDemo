@@ -17,7 +17,7 @@ public class RuleObj implements Serializable {
 
 	private Map<String, Object> ruleDetail;
 
-	private List<String> rules = new ArrayList<String>();
+	private List<String> rules = new ArrayList<>();
 
 	private Double point;
 
@@ -51,6 +51,7 @@ public class RuleObj implements Serializable {
 
 	/**
 	 * 将信息存入文件
+	 *
 	 * @Description 将信息存入文件
 	 * @see
 	 */
